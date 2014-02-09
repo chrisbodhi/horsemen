@@ -1,0 +1,7 @@
+%h2 The Horsemen Cometh
+
+%h4= Time.now.day
+
+%form{action: "/submit", method: "POST"}
+  %input{type: "text", name: "warmup[title]", value: "Enter a Warmup"}
+  %input{type: "submit", value: "Get fit!"}
