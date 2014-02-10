@@ -8,7 +8,6 @@ class CreateWarmups < ActiveRecord::Migration
       t.integer :weight
       t.text :description
       t.string :length
-      t.string :example
 
       t.timestamps
     end

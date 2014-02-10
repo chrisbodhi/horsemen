@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209225529) do
+ActiveRecord::Schema.define(version: 20140210044454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,13 @@ ActiveRecord::Schema.define(version: 20140209225529) do
     t.string   "title"
     t.integer  "rounds"
     t.integer  "reps"
-    t.string   "movement"
+    t.text     "movement"
     t.integer  "weight"
     t.text     "description"
     t.string   "length"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "example"
   end
 
 end
