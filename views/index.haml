@@ -1,14 +1,34 @@
 %h2 The Horsemen Cometh
 
-%h4= Time.now.day
+- unless Time.now.day % 7 == 0
+  %h3 Daily Warm-Up
+  = @warmup.title
 
-%form{action: "/submit", method: "POST"}
-  %input{type: "text", name: "warmup[title]", value: "Title"}
-  %input{type: "text", name: "warmup[rounds]", value: "Rounds"}
-  %input{type: "text", name: "warmup[reps]", value: "Reps"}
-  %input{type: "text", name: "warmup[movement]", value: "Movement", size: "100"}
-  %input{type: "text", name: "warmup[weight]", value: "Weight"}
-  %input{type: "text", name: "warmup[description]", value: "Desc", size: "100"}
-  %input{type: "text", name: "warmup[length]", value: "Length"}
-  %input{type: "url", name: "warmup[example]", value: "Example URL"}
-  %input{type: "submit", value: "Get fit!"}
+  %h3 Which month are you on?
+
+  %a{href: "/strength"} Strength
+  %a{href: "/endurance"} Power Endurance
+  %a{href: "/job"} Job-Specific
+  %a{href: "/maintain"} Maintainence
+
+- else
+  %h3 Rest Day
+
+%h3 Just Starting? Questions? Want to know more?
+%a{href: '/about'} Click here.
+
+%footer
+  %h6 
+    built by
+    %a{href: "https://twitter.com/chrisbodhi"} @chrisbodhi
+
+/ %form{action: "/submit", method: "POST"}
+/   %input{type: "text", name: "warmup[title]", value: "Title"}
+/   %input{type: "text", name: "warmup[rounds]", value: "Rounds"}
+/   %input{type: "text", name: "warmup[reps]", value: "Reps"}
+/   %input{type: "text", name: "warmup[movement]", value: "Movement", size: "100"}
+/   %input{type: "text", name: "warmup[weight]", value: "Weight"}
+/   %input{type: "text", name: "warmup[description]", value: "Desc", size: "100"}
+/   %input{type: "text", name: "warmup[length]", value: "Length"}
+/   %input{type: "url", name: "warmup[example]", value: "Example URL"}
+/   %input{type: "submit", value: "Get fit!"}

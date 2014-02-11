@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210044454) do
+ActiveRecord::Schema.define(version: 20140211012334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 20140210044454) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "example"
+  end
+
+  create_table "workouts", force: true do |t|
+    t.string   "category"
+    t.string   "title"
+    t.integer  "rounds"
+    t.integer  "reps"
+    t.text     "movement"
+    t.integer  "weight"
+    t.text     "description"
+    t.string   "length"
+    t.string   "example"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
