@@ -1,3 +1,55 @@
-%h2= @endurance.title
+%h1 Endurance
+
+- if Time.now.day == 1 || Time.now.day == 5 || Time.now.day == 8 || Time.now.day == 12 || Time.now.day == 15 || Time.now.day == 19 || Time.now.day == 22 || Time.now.day == 26
+  %h3 Strength Workout
+  %h4= @strength.title
+
+- elsif Time.now.day == 2 || Time.now.day == 24
+  %h3 Job Specific - Long - Workout
+  %h4= @job_long.title
+
+- elsif Time.now.day == 3 || Time.now.day == 11 || Time.now.day == 23 
+  %h3 Power Endurance Workout
+  %h4= @power_endure.title
+
+- elsif Time.now.day == 4
+  %h3 SMMF Workout
+  %h4= @smmf.title
+
+- elsif Time.now.day == 9
+  %h3 Power - Explosive - Workout
+  %h4= @power_expl.title
+
+- elsif Time.now.day == 10
+  %h3 Job Specific - FUCK!!! - Workout
+  %h4= @fuck.title
+
+- elsif Time.now.day == 16
+  %h3 Power - Cardio - Workout
+  %h4= @power_card.title
+
+- elsif Time.now.day == 17
+  %h3 Job Specific - Short - Workout
+  %h4= @job_short.title
+
+- elsif Time.now.day == 18
+  %h3 Progression + Less Than 30 Breathing Ladder Workout
+  %h4= @progression.title
+
+- elsif Time.now.day == 25
+  %h3 Circuit - Complimentary - Workout
+  %h4= @circuit.title
+
+- else
+  %h3 Recovery!
+  %h4= @recovery.title
+
+%h3 Outline for the Month
+%ul
+  %li 4x Power Endurance 
+  %li 2x Strength Maintenance 
+  %li 2x Job Specific 
+  %li 1x Endurance (+ 60 Min) 
+  %li 1x Recovery
 
 %a{href: '/'} Home

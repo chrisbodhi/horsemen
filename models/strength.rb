@@ -1,2 +1,2 @@
-class Workout < ActiveRecord::Base
+class Strength < ActiveRecord::Base
 end

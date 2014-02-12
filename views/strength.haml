@@ -1,41 +1,6 @@
 %h1 Strength
 
-- if Time.now.day == 1 || Time.now.day == 5 || Time.now.day == 8 || Time.now.day == 12 || Time.now.day == 15 || Time.now.day == 19 || Time.now.day == 22 || Time.now.day == 26
-  %h3 Strength Workout
-  %h4= @strength.title
-
-- elsif Time.now.day == 2 || Time.now.day == 24
-  %h3 Job Specific - Long - Workout
-  %h4= @joblong.title
-
-- elsif Time.now.day == 3 || Time.now.day == 11 || Time.now.day == 23 
-  %h3 Power Endurance Workout
-  %h4= @endurance.title
-
-- elsif Time.now.day == 4
-  %h3 SMMF Workout
-  %h4= @smmf.title
-
-- elsif Time.now.day == 9
-  %h3 Power - Explosive - Workout
-
-- elsif Time.now.day == 10
-  %h3 Job Specific - FUCK!!! - Workout
-
-- elsif Time.now.day == 16
-  %h3 Power - Cardio - Workout
-
-- elsif Time.now.day == 17
-  %h3 Job Specific - Short - Workout
-
-- elsif Time.now.day == 18
-  %h3 Progression + Less Than 30 Breathing Ladder Workout
-
-- elsif Time.now.day == 25
-  %h3 Circuit - Complimentary - Workout
-
-- else
-  %h3 Recovery!
+%h3= strength_check(Time.day.now)
 
 %h3 Outline for the Month
 %ul
