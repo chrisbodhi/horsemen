@@ -7,48 +7,67 @@ require './models/workout'        # Add workout class
 helpers do  
   def strength_check(date)
     if date == 1 || date == 5 || date == 8 || date == 12 || date == 15 || date == 19 || date == 22 || date == 26
-      "Strength Workout"
-      "#{@strength.title}"
+      return "Strength Workout", "#{@strength.title}"
 
     elsif date == 2 || date == 24
-      "Job Specific - Long - Workout"
-      "#{@job_long.title}"
+      return "Job Specific - Long - Workout", "#{@job_long.title}"
 
     elsif date == 3 || date == 11 || date == 23 
-      "Power Endurance Workout"
-      "#{@power_endure.title}"
+      return "Power Endurance Workout", "#{@power_endure.title}"
 
     elsif date == 4
-      "SMMF Workout"
-      "#{@smmf.title}"
+      return "SMMF Workout", "#{@smmf.title}"
 
     elsif date == 9
-      "Power - Explosive - Workout"
-      "#{@power_expl.title}"
+      return "Power - Explosive - Workout", "#{@power_expl.title}"
 
     elsif date == 10
-      "Job Specific - FUCK!!! - Workout"
-      "#{@fuck.title}"
+      return "Job Specific - FUCK!!! - Workout", "#{@fuck.title}"
 
     elsif date == 16
-      "Power - Cardio - Workout"
-      "#{@power_card.title}"
+      return "Power - Cardio - Workout", "#{@power_card.title}"
 
     elsif date == 17
-      "Job Specific - Short - Workout"
-      "#{@job_short.title}"
+      return "Job Specific - Short - Workout", "#{@job_short.title}"
 
     elsif date == 18
-      "Progression + Less Than 30 Breathing Ladder Workout"
-      "#{@progression.title}"
+      return "Progression + Less Than 30 Breathing Ladder Workout", "#{@progression.title}"
 
     elsif date == 25
-      "Circuit - Complimentary - Workout"
-      "#{@circuit.title}"
+      return "Circuit - Complimentary - Workout", "#{@circuit.title}"
 
     else
-      "Recovery!" 
-      "#{@recovery.title}"
+      return "Recovery!", "#{@recovery.title}"
+    end
+  end
+
+  def endurance_check(date)
+    if date == 1 || date == 4 || date == 8 || date == 11 || date == 15 || date == 22 || date == 26
+      return "Power Endurance Workout", "#{@power_endure.title}"
+    elsif date == 2
+      return "Job Specific - Short - Workout", "#{@job_short.title}"
+    elsif date == 3 || date == 16
+      return "Strength - Maintenance - Workout", "#{@strength_maintenance.title}"
+    elsif date == 5 || date == 18
+      return "Endurance Workout - 60+ Minutes", "#{@endurance.title}"
+    elsif date == 9
+      return "Circuit - Focus - Workout", "#{@circuit_focus.title}"
+    elsif date == 10 || date == 23
+      return "Job Specific - Long - Workout", "#{@job_long.title}"    
+    elsif date == 12 
+      return "Strength - Maintenance + Sport Specific Workout", "#{@strength_sport.title}"
+    elsif date == 13
+      return "Olympic Lifting", "#{@olympic_lift.title}"
+    elsif date == 17
+      return "Job Specific - FUCK!!! - Workout", "#{@fuck.title}"
+    elsif date == 19
+      return "Power Endurance + Circuit - Short - Workout", "#{@power_endure.title} <br /> #{@circuit.title}"
+    elsif date == 24
+      return "Strength Maintenance + Run", "#{@strength_maintenance.title} <br /> Run"
+    elsif date == 27
+      return "SMMF - Light - Workout", "#{@smmf.title}"
+    else
+      return "Recovery", "#{@recovery.title}"
     end
   end
 end
