@@ -1,0 +1,47 @@
+h2 {
+  color: red;
+  }
+
+h3 {
+  color: black;
+  font-size: 5em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h4 {
+  color: black;
+  font-size: 2em;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  /*font-style: bold;*/
+}
+
+a {}
+
+.month {
+  background-color: FireBrick;
+  color: white;
+  padding: 20px;
+  font-size: 2em;
+}
+
+.topbar {
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+  margin: 0px auto;
+  padding: 10px 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.topbar a {
+  color: white;
+}
+
+.warmup {
+
+}

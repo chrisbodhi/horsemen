@@ -1,29 +1,43 @@
-%h2 The Horsemen Cometh
+%head
+  %link{rel: "stylesheet", href: "/normalize.css"}
+  %link{rel: "stylesheet", href: "/foundation.min.css"}
+  %link{rel: "stylesheet", href: "/style.css"}
 
-- unless Time.now.day % 7 == 0
-  %h3 Daily Warm-Up
-  = @warmup.title
+%body
+  .row.topbar
+    .large-10.medium-10.small-10.columns.a
+      %a{href: '/about'} about
+    .large-2.medium-2.small-2.columns.end
+      %a{href: '/glossary'} glossary
 
-  %h3 Which month are you on?
+  - unless Time.now.day % 7 == 0
+    .row
+      .large-centered.medium-centered.columns   
+        %h3 
+          Daily Warm-Up
+        .warmup
+          = @warmup.movement
 
-  %a{href: "/strength"} Strength
-  %a{href: "/endurance"} Power Endurance
-  %a{href: "/job"} Job-Specific
-  %a{href: "/maintain"} Maintainence
 
-- else
-  %h3 Rest Day
+    .row
+      .large-centered.medium-centered.columns
+        %h4 Month
+        %a.month{href: "/strength"} Strength
+        %a.month{href: "/endurance"} Power Endurance
+        %a.month{href: "/job"} Job-Specific
+        %a.month{href: "/maintain"} Maintainence
 
-%h3 Just Starting? Questions? Want to know more?
-%a{href: '/about'} Click here.
+  - else
+    %h3 Rest Day
 
-/ %form{action: "/submit", method: "POST"}
-/   %input{type: "text", name: "warmup[title]", value: "Title"}
-/   %input{type: "text", name: "warmup[rounds]", value: "Rounds"}
-/   %input{type: "text", name: "warmup[reps]", value: "Reps"}
-/   %input{type: "text", name: "warmup[movement]", value: "Movement", size: "100"}
-/   %input{type: "text", name: "warmup[weight]", value: "Weight"}
-/   %input{type: "text", name: "warmup[description]", value: "Desc", size: "100"}
-/   %input{type: "text", name: "warmup[length]", value: "Length"}
-/   %input{type: "url", name: "warmup[example]", value: "Example URL"}
-/   %input{type: "submit", value: "Get fit!"}
+
+  / %form{action: "/submit", method: "POST"}
+  /   %input{type: "text", name: "warmup[title]", value: "Title"}
+  /   %input{type: "text", name: "warmup[rounds]", value: "Rounds"}
+  /   %input{type: "text", name: "warmup[reps]", value: "Reps"}
+  /   %input{type: "text", name: "warmup[movement]", value: "Movement", size: "100"}
+  /   %input{type: "text", name: "warmup[weight]", value: "Weight"}
+  /   %input{type: "text", name: "warmup[description]", value: "Desc", size: "100"}
+  /   %input{type: "text", name: "warmup[length]", value: "Length"}
+  /   %input{type: "url", name: "warmup[example]", value: "Example URL"}
+  /   %input{type: "submit", value: "Get fit!"}
