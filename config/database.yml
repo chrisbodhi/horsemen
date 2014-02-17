@@ -2,3 +2,8 @@ development:
   adapter: postgresql
   database: development
   host: localhost
+
+production:
+  adapter: postgresql
+  database: production
+  host: localhost

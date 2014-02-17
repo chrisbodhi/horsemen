@@ -1,3 +1,5 @@
+require "active_record"
+
 configure :production, :development do
   db = URI.parse('postgres://localhost/workout')
 
