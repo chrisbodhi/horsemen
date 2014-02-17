@@ -1,9 +1,5 @@
 development:
   adapter: postgresql
   database: development
-  host: localhost
-
-production:
-  adapter: postgresql
-  database: production
-  host: localhost
+  host: localhost/workout
+  # or host: postgres://localhost/workout

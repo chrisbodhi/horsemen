@@ -12,4 +12,6 @@ configure :production, :development do
     :encoding => 'utf8'
     )
 
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/workout')
+
 end
