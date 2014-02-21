@@ -179,6 +179,7 @@ get '/glossary' do
   haml :glossary
 end
 
+  # CATEGORIES
   # warmup
   # strength
   # power endurance
