@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211012334) do
+ActiveRecord::Schema.define(version: 20140222201600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(version: 20140211012334) do
 
   create_table "warmups", force: true do |t|
     t.string   "title"
-    t.integer  "rounds"
-    t.integer  "reps"
+    t.string   "rounds"
+    t.string   "reps"
     t.text     "movement"
-    t.integer  "weight"
+    t.string   "weight"
     t.text     "description"
     t.string   "length"
     t.datetime "created_at"
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 20140211012334) do
   create_table "workouts", force: true do |t|
     t.string   "category"
     t.string   "title"
-    t.integer  "rounds"
-    t.integer  "reps"
+    t.string   "rounds"
+    t.string   "reps"
     t.text     "movement"
-    t.integer  "weight"
+    t.string   "weight"
     t.text     "description"
     t.string   "length"
     t.string   "example"
