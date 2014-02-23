@@ -7,3 +7,6 @@ gem "sinatra-activerecord"
 gem "pg"
 gem "rake"
 gem "shotgun"
+
+# To calm down Heroku
+ruby '2.0.0'
