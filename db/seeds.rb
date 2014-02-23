@@ -161,7 +161,7 @@ warmups = [
     rounds:"",
     reps:"",
     movement: "Row 500m and then complete 3x barbell complexes",
-    weight:,
+    weight:"",
     description: "",
     length: "",
     example: ""
@@ -179,7 +179,7 @@ warmups = [
     rounds:"",
     reps:"",
     movement: "Drag a tire for one mile total",
-    weight:,
+    weight:"",
     description: "",
     length: "",
     example: ""
@@ -198,71 +198,3 @@ warmups.each do |warmup|
     example: warmup[:example]
   )
 end
-
-# workouts = [
-#   { category: "",
-#     title: "",
-#     rounds:,
-#     reps:,
-#     movement: "",
-#     weight:,
-#     description: "",
-#     length: "",
-#     example: ""
-#   },  
-#   { category: "",
-#     title: "",
-#     rounds:,
-#     reps:,
-#     movement: "",
-#     weight:,
-#     description: "",
-#     length: "",
-#     example: ""
-#   },  
-#   { category: "",
-#     title: "",
-#     rounds:,
-#     reps:,
-#     movement: "",
-#     weight:,
-#     description: "",
-#     length: "",
-#     example: ""
-#   },  
-#   { category: "",
-#     title: "",
-#     rounds:,
-#     reps:,
-#     movement: "",
-#     weight:,
-#     description: "",
-#     length: "",
-#     example: ""
-#   },  
-#   { category: "",
-#     title: "",
-#     rounds:,
-#     reps:,
-#     movement: "",
-#     weight:,
-#     description: "",
-#     length: "",
-#     example: ""
-#   }
-# ]
-
-# workouts.each do |workout|
-#   Workout.create(
-#     category: workout[:category],
-#     title: workout[:title],
-#     rounds: workout[:rounds],
-#     movement: workout[:movement],
-#     reps: workout[:reps],
-#     weight: workout[:weight],
-#     description: workout[:description],
-#     length: workout[:length],
-#     example: workout[:example]
-#   )
-# end
-
