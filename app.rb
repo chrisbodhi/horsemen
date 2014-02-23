@@ -82,21 +82,6 @@ get '/about' do
   haml :about
 end
 
-# post '/submit' do
-#   @warmup = Warmup.new(params[:warmup])
-#   if @warmup.save
-#     redirect '/'
-#   else
-#     'Sorry, error!'
-#   end
-# end
-
-# get '/warmup' do
-#   @warmups = Warmup.all
-#   @warmup = @warmups.sample
-#   haml :warmup
-# end
-
 get '/strength' do 
   @strengths = Workout.where("category = ?", "strength").to_a
   @strength = @strengths.sample
@@ -104,7 +89,7 @@ get '/strength' do
   @power_endure = @power_endures.sample
   @jobs = Workout.where("category = ?", "job").to_a
   @job = @jobs.sample
-  @jobs_long = Workout.where("category = ?", "jobs_long").to_a
+  @jobs_long = Workout.where("category = ?", "job_long").to_a
   @job_long = @jobs_long.sample
   @smmfs = Workout.where("category = ?", "smmf").to_a
   @smmf = @smmfs.sample  
@@ -118,7 +103,7 @@ get '/strength' do
   @job_short = @job_shorts.sample
   @progressions = Workout.where("category = ?", "progression").to_a
   @progression = @progressions.sample
-  @circuits = Workout.where("category = ?", "circuit").to_a
+  @circuits = Workout.where("category = ?", "circuit_comp").where("category = ?", "circuit_short").where("category = ?", "circuit_focus").to_a
   @circuit = @circuits.sample
   @recoverys = Workout.where("category = ?", "recovery").to_a
   @recovery = @recoverys.sample
@@ -126,7 +111,7 @@ get '/strength' do
 end
 
 get '/endurance' do 
-  @circuits = Workout.where("category = ?", "circuit").to_a
+  @circuits = Workout.where("category = ?", "circuit_comp").where("category = ?", "circuit_short").to_a
   @circuit = @circuits.sample
   @circuit_foci = Workout.where("category = ?", "circuit_focus").to_a
   @circuit_focus = @circuit_foci.sample
@@ -136,7 +121,7 @@ get '/endurance' do
   @fuck = @fucks.sample
   @jobs = Workout.where("category = ?", "job").to_a
   @job = @jobs.sample
-  @jobs_long = Workout.where("category = ?", "jobs_long").to_a
+  @jobs_long = Workout.where("category = ?", "job_long").to_a
   @job_long = @jobs_long.sample
   @job_shorts = Workout.where("category = ?", "job_short").to_a
   @job_short = @job_shorts.sample
@@ -180,6 +165,12 @@ get '/glossary' do
 end
 
   # CATEGORIES
+  # ADDED TO CSV, NOT A VARIABLE
+  # accumulation
+  # density
+  # --skipped the API
+  # 
+  # ALREADY ACCOUNTED FOR
   # warmup
   # strength
   # power endurance
@@ -203,7 +194,6 @@ end
   # density
   # progression [light]
   # accumulation
-
 
 
 
