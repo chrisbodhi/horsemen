@@ -4,117 +4,174 @@ require './config/environments'   # DB config
 require './models/warmup'         # Add warmup class
 require './models/workout'        # Add workout class
 
-helpers do  
+helpers do 
+
+  def get_strength
+    @strengths = Workout.where("category = ?", "strength").to_a
+    @strength = @strengths.sample
+  end
+
+  def get_job_long
+    @jobs_long = Workout.where("category = ?", "job_long").to_a
+    @job_long = @jobs_long.sample
+  end
+
+  def get_power_endure
+    @power_endures = Workout.where("category = ?", "power_endure").to_a
+    @power_endure = @power_endures.sample
+  end
+
+  def get_smmf
+    @smmfs = Workout.where("category = ?", "smmf").to_a
+    @smmf = @smmfs.sample 
+  end
+
+  def get_power_expl
+    @power_expls = Workout.where("category = ?", "power_expl").to_a
+    @power_expl = @power_expls.sample
+  end
+
+  def get_fuck
+    @fucks = Workout.where("category = ?", "fuck").to_a
+    @fuck = @fucks.sample
+  end
+
+  def get_power_card
+    @power_cards = Workout.where("category = ?", "power_card").to_a
+    @power_card = @power_cards.sample
+  end
+
+  def get_job_short
+    @job_shorts = Workout.where("category = ?", "job_short").to_a
+    @job_short = @job_shorts.sample
+  end
+
+  def get_progression
+    @progressions = Workout.where("category = ?", "progression").to_a
+    @progression = @progressions.sample
+  end
+
+  def get_circuit
+    @circuits = Workout.where("category = ?", "circuit_comp").where("category = ?", "circuit_short").where("category = ?", "circuit_focus").to_a
+    @circuit = @circuits.sample
+  end
+
+  def get_recovery
+    @recoverys = Workout.where("category = ?", "recovery").to_a
+    @recovery = @recoverys.sample
+  end
+
+  def get_strength_maintenance
+    @strength_maintenances = Workout.where("category = ?", "strength_maintenance").to_a
+    @strength_maintenance = @strength_maintenances.sample
+  end
+
+  def get_olympic_lift
+    @olympic_lifts = Workout.where(category: "olympic_lift").to_a
+    @olympic_lift = @olympic_lifts.sample
+  end
+
+  def get_circuit_focus
+    @circuits = Workout.where("category = ?", "circuit_focus").to_a
+    @circuit_focus = @circuits.sample
+  end
+
+  def get_endurance
+    @endurances = Workout.where("category = ?", "endurance").to_a
+    @endurance = @endurances.sample
+  end
+
+
+
+
   def strength_check(date)
     if date == 1 || date == 5 || date == 8 || date == 12 || date == 15 || date == 19 || date == 22 || date == 26
-      @strengths = Workout.where("category = ?", "strength").to_a
-      @strength = @strengths.sample
+      get_strength
       return "Strength Workout", @strength
 
     elsif date == 2 || date == 24
-      @jobs_long = Workout.where("category = ?", "job_long").to_a
-      @job_long = @jobs_long.sample
+      get_job_long
       return "Job Specific - Long - Workout", @job_long
 
     elsif date == 3 || date == 11 || date == 23 
-      @power_endures = Workout.where("category = ?", "power_endure").to_a
-      @power_endure = @power_endures.sample
+      get_power_endure
       return "Power Endurance Workout", @power_endure
 
     elsif date == 4
-      @smmfs = Workout.where("category = ?", "smmf").to_a
-      @smmf = @smmfs.sample 
+      get_smmf
       return "SMMF Workout", @smmf
 
     elsif date == 9
-      @power_expls = Workout.where("category = ?", "power_expl").to_a
-      @power_expl = @power_expls.sample
+      get_power_expl
       return "Power - Explosive - Workout", @power_expl
 
     elsif date == 10
-      @fucks = Workout.where("category = ?", "fuck").to_a
-      @fuck = @fucks.sample
+      get_fuck
       return "Job Specific - FUCK!!! - Workout", @fuck
 
     elsif date == 16
-      @power_cards = Workout.where("category = ?", "power_card").to_a
-      @power_card = @power_cards.sample
+      get_power_card
       return "Power - Cardio - Workout", @power_card
 
     elsif date == 17
-      @job_shorts = Workout.where("category = ?", "job_short").to_a
-      @job_short = @job_shorts.sample
+      get_job_short
       return "Job Specific - Short - Workout", @job_short
 
     elsif date == 18
-      @progressions = Workout.where("category = ?", "progression").to_a
-      @progression = @progressions.sample
+      get_progression
       return "Progression + Less Than 30 Breathing Ladder Workout", @progression
 
     elsif date == 25
-      @circuits = Workout.where("category = ?", "circuit_comp").where("category = ?", "circuit_short").where("category = ?", "circuit_focus").to_a
-      @circuit = @circuits.sample
+      get_circuit
       return "Circuit - Complementary - Workout", @circuit
 
     else
-      @recoverys = Workout.where("category = ?", "recovery").to_a
-      @recovery = @recoverys.sample
+      get_recovery
       return "Recovery!", @recovery
     end
   end
 
   def endurance_check(date)
     if date == 1 || date == 4 || date == 8 || date == 11 || date == 15 || date == 22 || date == 26
-      @power_endures = Workout.where("category = ?", "power_endure").to_a
-      @power_endure = @power_endures.sample
+      get_power_endure
       return "Power Endurance Workout", @power_endure
     elsif date == 2
-      @job_shorts = Workout.where("category = ?", "job_short").to_a
-      @job_short = @job_shorts.sample
+      get_job_short
       return "Job Specific - Short - Workout", @job_short
     elsif date == 3 || date == 16
-      @strength_maintenances = Workout.where("category = ?", "strength_maintenance").to_a
-      @strength_maintenance = @strength_maintenances.sample
+      get_strength_maintenance
       return "Strength - Maintenance - Workout", @strength_maintenance
     elsif date == 5 || date == 18
+      get_endurance
       return "Endurance Workout - 60+ Minutes", @endurance
     elsif date == 9
-      @circuits = Workout.where("category = ?", "circuit_focus").to_a
-      @circuit_focus = @circuits.sample
+      get_circuit_focus
       return "Circuit - Focus - Workout", @circuit_focus
     elsif date == 10 || date == 23
-      @jobs_long = Workout.where("category = ?", "job_long").to_a
-      @job_long = @jobs_long.sample
+      get_job_long
       return "Job Specific - Long - Workout", @job_long    
     elsif date == 12
-      @strengths = Workout.where("category = ?", "strength").to_a
-      @strength = @strengths.sample 
-      @strength_maintenances = Workout.where("category = ?", "strength_maintenance").to_a
-      @strength_maintenance = @strength_maintenances.sample
+      get_strength
+      get_strength_maintenance
       return "Strength - Maintenance + Sport Specific Workout", @strength
     elsif date == 13
+      get_olympic_lift
       return "Olympic Lifting", @olympic_lift
     elsif date == 17
-      @fucks = Workout.where("category = ?", "fuck").to_a
-      @fuck = @fucks.sample
+      get_fuck
       return "Job Specific - FUCK!!! - Workout", @fuck
     elsif date == 19
-      @power_endures = Workout.where("category = ?", "power_endure").to_a
-      @power_endure = @power_endures.sample
-      @circuits = Workout.where("category = ?", "circuit_comp").where("category = ?", "circuit_short").where("category = ?", "circuit_focus").to_a
-      @circuit = @circuits.sample
+      get_power_endure
+      get_circuit
       return "Power Endurance + Circuit - Short - Workout", @power_endure
     elsif date == 24
-      @strength_maintenances = Workout.where("category = ?", "strength_maintenance").to_a
-      @strength_maintenance = @strength_maintenances.sample
+      get_strength_maintenance
       return "Strength Maintenance + Run", @strength_maintenance
     elsif date == 27
-      @smmfs = Workout.where("category = ?", "smmf").to_a
-      @smmf = @smmfs.sample 
+      get_smmf
       return "SMMF - Light - Workout", @smmf
     else
-      @recoverys = Workout.where("category = ?", "recovery").to_a
-      @recovery = @recoverys.sample
+      get_recovery
       return "Recovery", @recovery
     end
   end
@@ -136,51 +193,14 @@ get '/strength' do
 end
 
 get '/endurance' do 
-  @circuits = Workout.where("category = ?", "circuit_comp").where("category = ?", "circuit_short").to_a
-  @circuit = @circuits.sample
-  @circuit_foci = Workout.where("category = ?", "circuit_focus").to_a
-  @circuit_focus = @circuit_foci.sample
-  @endurances = Workout.where("category = ?", "endurance").to_a
-  @endurance = @endurances.sample
-  @fucks = Workout.where("category = ?", "fuck").to_a
-  @fuck = @fucks.sample
-  @jobs = Workout.where("category = ?", "job").to_a
-  @job = @jobs.sample
-  @jobs_long = Workout.where("category = ?", "job_long").to_a
-  @job_long = @jobs_long.sample
-  @job_shorts = Workout.where("category = ?", "job_short").to_a
-  @job_short = @job_shorts.sample
-  @olympic_lifts = Workout.where("category = ?", "olympic_lift").to_a
-  @olympic_lift = @olympic_lifts.sample
-  @power_endures = Workout.where("category = ?", "power_endure").to_a
-  @power_endure = @power_endures.sample
-  @power_expls = Workout.where("category = ?", "power_expl").to_a
-  @power_expl = @power_expls.sample
-  @power_cards = Workout.where("category = ?", "power_card").to_a
-  @power_card = @power_cards.sample
-  @progressions = Workout.where("category = ?", "progression").to_a
-  @progression = @progressions.sample
-  @recoverys = Workout.where("category = ?", "recovery").to_a
-  @recovery = @recoverys.sample
-  @smmfs = Workout.where("category = ?", "smmf").to_a
-  @smmf = @smmfs.sample  
-  @sports = Workout.where("category = ?", "sport").to_a
-  @sport = @sports.sample
-  @strengths = Workout.where("category = ?", "strength").to_a
-  @strength = @strengths.sample
-
   haml :endurance
 end
 
 get '/job' do 
-  @jobs = Workout.where("category = ?", "job").to_a
-  @job = @jobs.sample
   haml :job
 end
 
 get '/maintain' do 
-  @maintains = Workout.where("category = ?", "maintain").to_a
-  @maintain = @maintains.sample
   haml :maintain
 end
 
