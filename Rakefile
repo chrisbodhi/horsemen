@@ -1,3 +1,3 @@
 require './app'
 require 'sinatra/activerecord/rake'
-require './populate_db'
+require './populate_db.rake'
