@@ -1,4 +1,5 @@
 desc "This task populates the Workout database."
+
 task :populate_db => :environment do
   
   require 'csv'    

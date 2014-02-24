@@ -7,5 +7,6 @@ require 'rubygems'
 require 'bundler/setup'
 
 require ENV['DATABASE_URL']
+require 'horsemen'
 
 IRB.start

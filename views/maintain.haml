@@ -1,3 +1,13 @@
-%h2= @maintain.title
+%h1 Maintenance
+
+%h3= maintain_check(Time.now.day)[0]
+%h4= maintain_check(Time.now.day)[1].title.titlecase
+
+%h3 Outline for the Month
+%ul
+  %li 4x Recovery Every 14 Days
+  %li 2x Circuit Every 14 Days
+  %li 2x Strength Every 14 Days
+  %li 2x Job Specific [Fuck!!!] Every 14 Days
 
 %a{href: '/'} Home
