@@ -93,7 +93,7 @@ helpers do
   def strength_check(date)
     if date == 1 || date == 5 || date == 8 || date == 12 || date == 15 || date == 19 || date == 22 || date == 26
       get_strength
-      @strength
+      @strength # don't think i need to actually return a thing here
 
     elsif date == 2 || date == 24
       get_job_long
@@ -281,7 +281,7 @@ get '/about' do
 end
 
 get '/strength' do
-  # @strength = strength_check(Time.now.day) 
+  @workout = strength_check(Time.now.day) 
   haml :strength
 end
 

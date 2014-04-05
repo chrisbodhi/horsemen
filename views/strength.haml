@@ -12,12 +12,13 @@
   .row
     .medium-6.medium-centered.columns
       %h1 Strength
-      %h3= .category
-      %h3= .title
-      %h3= .reps
-      %h3= .rounds
-      %h3= .movement
-      %h3= .description
+      %h5= @workout.category
+      %h5= @workout.title
+      %h5= @workout.reps
+      %h5= @workout.rounds
+      %h5= @workout.movement
+      %h5= @workout.description
+      %h5= @workout.weight
   
 
   %h3 Outline for the Month
