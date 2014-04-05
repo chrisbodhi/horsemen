@@ -1,5 +1,4 @@
 %head
-  %link{rel: "stylesheet", href: "/normalize.css"}
   %link{rel: "stylesheet", href: "/foundation.min.css"}
   %link{rel: "stylesheet", href: "/style.css"}
 
@@ -16,15 +15,46 @@
         %h3 
           Daily Warm-Up
         .warmup
-          = @warmup.movement
+          - if @warmup.title != ''  
+            title:
+            = @warmup.title
+          %br
+          %hr
+          - if @warmup.reps != ''  
+            reps:
+            = @warmup.reps
+          %br
+          - if @warmup.movement != ''  
+            movement:
+            = @warmup.movement
+          %br
+          - if @warmup.weight != ''  
+            weight:
+            = @warmup.weight
+          %br
+          - if @warmup.description != ''
+            description:
+            = @warmup.description
+          %br
+          - if @warmup.length != ''  
+            length:
+            = @warmup.length
 
 
     .row
       .large-centered.medium-centered.columns
         %h4 Month
+    .row
+      .small-8.small-centered.columns
         %a.month{href: "/strength"} Strength
+    .row
+      .small-8.small-centered.columns
         %a.month{href: "/endurance"} Power Endurance
+    .row
+      .small-8.small-centered.columns
         %a.month{href: "/job"} Job-Specific
+    .row
+      .small-8.small-centered.columns
         %a.month{href: "/maintain"} Maintainence
 
   - else

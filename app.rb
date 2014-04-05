@@ -93,47 +93,47 @@ helpers do
   def strength_check(date)
     if date == 1 || date == 5 || date == 8 || date == 12 || date == 15 || date == 19 || date == 22 || date == 26
       get_strength
-      return "Strength Workout", @strength
+      @strength
 
     elsif date == 2 || date == 24
       get_job_long
-      return "Job Specific - Long - Workout", @job_long
+      @job_long
 
     elsif date == 3 || date == 11 || date == 23 
       get_power_endure
-      return "Power Endurance Workout", @power_endure
+      @power_endure
 
     elsif date == 4
       get_smmf
-      return "SMMF Workout", @smmf
+      @smmf
 
     elsif date == 9
       get_power_expl
-      return "Power - Explosive - Workout", @power_expl
+      @power_expl
 
     elsif date == 10
       get_fuck
-      return "Job Specific - FUCK!!! - Workout", @fuck
+      @fuck
 
     elsif date == 16
       get_power_card
-      return "Power - Cardio - Workout", @power_card
+      @power_card
 
     elsif date == 17
       get_job_short
-      return "Job Specific - Short - Workout", @job_short
+      @job_short
 
     elsif date == 18
       get_progression
-      return "Progression + Less Than 30 Breathing Ladder Workout", @progression
+      @progression
 
     elsif date == 25
       get_circuit
-      return "Circuit - Complementary - Workout", @circuit
+      @circuit
 
     else
       get_recovery
-      return "Recovery!", @recovery
+      @recovery
     end
   end
 
@@ -280,7 +280,8 @@ get '/about' do
   haml :about
 end
 
-get '/strength' do 
+get '/strength' do
+  # @strength = strength_check(Time.now.day) 
   haml :strength
 end
 

@@ -1,13 +1,29 @@
-%h1 Strength
+%head
+  %link{rel: "stylesheet", href: "/foundation.min.css"}
+  %link{rel: "stylesheet", href: "/style.css"}
 
-%h3= strength_check(Time.now.day)[0]
-%h4= strength_check(Time.now.day)[1].title.titlecase
+%body
+  .row.topbar
+    .large-10.medium-10.small-10.columns.a
+      %a{href: '/'} home
+    .large-2.medium-2.small-2.columns.end
+      %a{href: '/glossary'} glossary
 
-%h3 Outline for the Month
-%ul
-  %li 4x Strength Every 14 Days
-  %li 2x Recovery Every 14 Days 
-  %li 2x Job Specific Every 14 Days 
-  %li 2x Power Endurance
+  .row
+    .medium-6.medium-centered.columns
+      %h1 Strength
+      %h3= .category
+      %h3= .title
+      %h3= .reps
+      %h3= .rounds
+      %h3= .movement
+      %h3= .description
+  
 
-%a{href: '/'} Home
+  %h3 Outline for the Month
+  %ul
+    %li 4x Strength Every 14 Days
+    %li 2x Recovery Every 14 Days 
+    %li 2x Job Specific Every 14 Days 
+    %li 2x Power Endurance
+
