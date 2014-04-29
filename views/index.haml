@@ -4,9 +4,9 @@
 
 %body
   .row.topbar
-    .large-10.medium-10.small-10.columns.a
+    .small-1.columns
       %a{href: '/about'} about
-    .large-2.medium-2.small-2.columns.end
+    .small-1.small-11-offset.columns
       %a{href: '/glossary'} glossary
 
   - unless Time.now.day % 7 == 0
@@ -45,17 +45,17 @@
       .large-centered.medium-centered.columns
         %h4 Month
     .row
-      .small-8.small-centered.columns
-        %a.month{href: "/strength"} Strength
+      .small-3.columns.month
+        %a{href: "/strength"} Strength
     .row
-      .small-8.small-centered.columns
-        %a.month{href: "/endurance"} Power Endurance
+      .small-3.columns.month
+        %a{href: "/endurance"} Power Endurance
     .row
-      .small-8.small-centered.columns
-        %a.month{href: "/job"} Job-Specific
+      .small-3.columns.month
+        %a{href: "/job"} Job-Specific
     .row
-      .small-8.small-centered.columns
-        %a.month{href: "/maintain"} Maintainence
+      .small-3.columns.month
+        %a{href: "/maintain"} Maintainence
 
   - else
     %h3 Rest Day

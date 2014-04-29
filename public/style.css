@@ -18,7 +18,13 @@ h4 {
   /*font-style: bold;*/
 }
 
-a {}
+a {
+  color: white;
+}
+
+a:hover {
+  color: black;
+}
 
 .month {
   background-color: FireBrick;
