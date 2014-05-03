@@ -6,7 +6,7 @@
   .row.topbar
     .small-1.columns
       %a{href: '/about'} about
-    .small-1.small-11-offset.columns
+    .small-1.small-offset-10.columns
       %a{href: '/glossary'} glossary
 
   - unless Time.now.day % 7 == 0
@@ -41,20 +41,22 @@
             = @warmup.length
 
 
+    %hr
+
     .row
-      .large-centered.medium-centered.columns
+      .small-3.small-centered.columns
         %h4 Month
     .row
-      .small-3.columns.month
+      .small-3.small-centered.columns.month
         %a{href: "/strength"} Strength
     .row
-      .small-3.columns.month
+      .small-3.small-centered.columns.month
         %a{href: "/endurance"} Power Endurance
     .row
-      .small-3.columns.month
+      .small-3.small-centered.columns.month
         %a{href: "/job"} Job-Specific
     .row
-      .small-3.columns.month
+      .small-3.small-centered.columns.month
         %a{href: "/maintain"} Maintainence
 
   - else
