@@ -9,4 +9,4 @@ gem "rake"
 gem "shotgun"
 
 # To calm down Heroku
-ruby '2.0.0'
+ruby '2.2.4'
